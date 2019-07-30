@@ -14,9 +14,9 @@ object AnalyticsTransform extends EitherTryHandler {
     for {
 
       transformDf <- transform(df)
-      resultXfrDf <- selectColumns(transformDf)
+      transformed <- selectColumns(transformDf)
 
-    } yield resultXfrDf
+    } yield transformed
   }
 
   private def transform(df: DataFrame) : Either[AnaError, DataFrame] = {
